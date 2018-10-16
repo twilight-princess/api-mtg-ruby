@@ -134,7 +134,7 @@ export const addToDeck = (card, deckId) => {
 
 export const createUser = (username) => {
     return dispatch => {
-        axios.post('/users', {username: username})
+        axios.post('localhost:3000/api/users', {username: username})
             .then(response => {
                 if (response) {
                     store.dispatch({
@@ -148,7 +148,7 @@ export const createUser = (username) => {
 
 export const login = (user) => {
     return dispatch => {
-        axios.post(baseUrl + '/api/users/login', {username: user})
+        axios.post('http://localhost:3000/api/v1/users/login', {user: { username: user }})
             .then(response => {
                 if (response) {
                     store.dispatch({

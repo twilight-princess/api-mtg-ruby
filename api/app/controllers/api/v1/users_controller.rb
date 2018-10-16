@@ -14,6 +14,13 @@ module Api::V1
       render json: @user
     end
 
+    # POST /users/login
+    def login
+      @user = User.find_by_username(user_params[:username])
+
+      render json: @user, status: :success
+    end
+
     # POST /users
     def create
       @user = User.new(user_params)

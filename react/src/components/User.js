@@ -24,6 +24,7 @@ class User extends Component {
   }
   handleLogin(e) {
     e.preventDefault()
+    console.log('test')
     this.setState(login(this.state.username))
   }
   handleCreateUsername(e) {
@@ -44,9 +45,7 @@ class User extends Component {
     return (
       <div className="user">
         {!this.props.loggedIn ?
-        <form>
-          <LoginBox />
-        </form> 
+          <LoginBox handleLogin={ this.handleLogin } createUser={ this.createUser } />
         : <button onClick={this.handleLogout}>Logout</button>
         }
       </div>

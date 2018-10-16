@@ -23,7 +23,6 @@ render(
           <Nav />
           <Switch>
             <Route path="/" exact component={App} />
-            {/* <Route path="/card" component={SearchCards} /> */}
             <Route path="/decks" render={Decks} />
             <Route path="/deck" component={Deck} />
           </Switch>
