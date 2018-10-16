@@ -8,10 +8,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(
-  title: 'West Sweden Road Trip',
-  excerpt: 'A cool road trip with stops in harbors of the coast'
+  username: 'midna',
+  decks: []
 )
 User.create(
-  title: 'Must have equipment for the outdoor photographer',
-  excerpt: 'My selection of gear for modern outdoor photography'
+  username: 'tink',
+  decks: []
 )

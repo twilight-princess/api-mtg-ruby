@@ -10,20 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_022551) do
+ActiveRecord::Schema.define(version: 2018_10_16_045430) do
 
   create_table "cards", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "deck_id"
     t.text "description"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["deck_id"], name: "index_cards_on_deck_id"
-    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "decks", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "type"
     t.string "name"
     t.text "description"
@@ -31,11 +30,11 @@ ActiveRecord::Schema.define(version: 2018_10_16_022551) do
     t.integer "cards"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_decks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "decks"
+    t.string "username", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

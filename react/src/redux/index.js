@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware } from "redux"
-import thunk from "redux-thunk"
 import axios from "axios"
-//const baseUrl = process.env.BASE_URL
+import thunk from "redux-thunk"
+
+const baseUrl = process.env.BASE_URL
 
 const initialState = {
     deck: [],
@@ -133,7 +134,7 @@ export const addToDeck = (card, deckId) => {
 
 export const createUser = (username) => {
     return dispatch => {
-        axios.post('/user', {username: username})
+        axios.post('/users', {username: username})
             .then(response => {
                 if (response) {
                     store.dispatch({
@@ -147,7 +148,7 @@ export const createUser = (username) => {
 
 export const login = (user) => {
     return dispatch => {
-        axios.post('/user/login', {username: user})
+        axios.post(baseUrl + '/api/users/login', {username: user})
             .then(response => {
                 if (response) {
                     store.dispatch({
@@ -163,7 +164,6 @@ export const login = (user) => {
 }
 
 export const logout = () => {
-    
     return dispatch => {
         store.dispatch({
             type: "LOGOUT"
@@ -173,7 +173,7 @@ export const logout = () => {
 
 export const createDeck = (name, details) => {
     return dispatch => {
-        axios.post('/deck', {userId: store.getState().currentUser._id, deck: {name: name, details: details}})
+        axios.post(baseUrl + '/api/users/deck', {userId: store.getState().currentUser._id, deck: {name: name, details: details}})
             .then(response => {
                 if (response) {
                     store.dispatch({
@@ -187,7 +187,7 @@ export const createDeck = (name, details) => {
 
 export const saveDeckToDB = (deck) => {
     return dispatch => {
-        axios.put('/user/'+ store.getState().currentUser._id, store.getState().currentUser)
+        axios.put(baseUrl + '/api/users/'+ store.getState().currentUser._id, store.getState().currentUser)
             .then(response => {
                 if (response) {
                     store.dispatch({

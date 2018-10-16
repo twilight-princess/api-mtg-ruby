@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-  before_action :set_deck, only: [:show, :update, :destroy]
+  before_action :set_deck, only: %i[show update destroy]
 
   # GET /decks
   def index
@@ -39,13 +39,14 @@ class DecksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_deck
-      @deck = Deck.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def deck_params
-      params.require(:deck).permit(:type, :name, :description, :url, :cards)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_deck
+    @deck = Deck.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def deck_params
+    params.require(:deck).permit(:type, :name, :description, :url, :cards)
+  end
 end

@@ -8,13 +8,13 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux";
 
-import Nav from './components/Nav'
-import App from './components/App'
-// import SearchCards from './components/SearchCards'
-import Decks from './components/Decks'
-import Deck from './components/Deck'
+import Nav from './components/Nav';
+import App from './components/App';
+// import SearchCards from './components/SearchCards';
+import Decks from './components/Decks';
+import Deck from './components/Deck';
 
-import './styles/index.css'
+import './styles/index.css';
 
 render(
     <BrowserRouter>
