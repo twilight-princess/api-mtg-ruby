@@ -8,7 +8,7 @@ class LoginBox extends Component {
     return (
       <div id="LoginBox">
         <form name="login">
-          <input onChange={this.handleChange} value={this.username} name="username" type="text" />
+          <input onChange={this.props.handleChange} value={this.username} name="username" type="text" />
           <button onClick={this.props.handleLogin}>Login</button>
           <button onClick={this.props.createUser}>Create Username</button>
         </form>
