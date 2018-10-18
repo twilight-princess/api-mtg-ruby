@@ -45,7 +45,7 @@ class User extends Component {
     return (
       <div className="user">
         {!this.props.loggedIn ?
-          <LoginBox handleLogin={ this.handleLogin } createUser={ this.createUser } />
+          <LoginBox handleLogin={ this.handleLogin } createUser={ this.createUser } handleChange={ this.handleChange } />
         : <button onClick={this.handleLogout}>Logout</button>
         }
       </div>

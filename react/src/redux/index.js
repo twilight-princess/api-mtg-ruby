@@ -134,7 +134,7 @@ export const addToDeck = (card, deckId) => {
 
 export const createUser = (username) => {
     return dispatch => {
-        axios.post('localhost:3000/api/users', {username: username})
+        axios.post('http://localhost:3000/api/v1/users/', {username: username})
             .then(response => {
                 if (response) {
                     store.dispatch({
@@ -173,7 +173,7 @@ export const logout = () => {
 
 export const createDeck = (name, details) => {
     return dispatch => {
-        axios.post(baseUrl + '/api/users/deck', {userId: store.getState().currentUser._id, deck: {name: name, details: details}})
+        axios.post('http://localhost:3000/api/v1/decks', {userId: store.getState().currentUser._id, deck: {name: name, details: details}})
             .then(response => {
                 if (response) {
                     store.dispatch({
@@ -187,7 +187,7 @@ export const createDeck = (name, details) => {
 
 export const saveDeckToDB = (deck) => {
     return dispatch => {
-        axios.put(baseUrl + '/api/users/'+ store.getState().currentUser._id, store.getState().currentUser)
+        axios.put('http://localhost:3000/api/v1/decks/'+ store.getState().currentUser._id, store.getState().currentUser)
             .then(response => {
                 if (response) {
                     store.dispatch({
