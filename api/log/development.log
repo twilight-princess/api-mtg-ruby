@@ -2304,3 +2304,1214 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-17 22:07:28 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 11ms (Views: 3.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-17 23:57:10 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/darlenewelch/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-17 23:58:00 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"first", "details"=>""}}
+Unpermitted parameter: :details
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 25ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-17 23:59:28 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"first", "details"=>"my first deck"}}
+Unpermitted parameter: :details
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 00:03:48 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"first", "details"=>"my first deck"}}
+Unpermitted parameter: :details
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 00:03:49 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"first", "details"=>"my first deck"}}
+Unpermitted parameter: :details
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 00:11:27 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 00:11:41 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"hi", "description"=>"really"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 00:17:40 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 00:18:02 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"hi", "description"=>"hi"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 00:56:12 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/darlenewelch/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 00:56:25 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"oh hello", "description"=>"me llamo dee"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 17ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 00:59:14 -0600
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 00:59:24 -0600
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 00:59:24 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"oh hello", "description"=>"me llamo dee"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 11ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"oh hello", "description"=>"me llamo dee"}}
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"oh hello", "description"=>"me llamo dee"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 12ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 21ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 01:01:21 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"oh hello", "description"=>"me llamo dee"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 15:09:45 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/darlenewelch/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:09:53 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"ffgh", "description"=>"fhgfhf"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 16ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 15:21:45 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:21:49 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:21:58 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:39:53 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `create' for #<Deck:0x00007f84b429f118>
+Did you mean?  created_at):
+  
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:40:51 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `new' for #<Deck:0x00007f84b6932898>):
+  
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:40:53 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `new' for #<Deck:0x00007f84b425df88>):
+  
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:41:08 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `new' for #<Deck:0x00007f84b625eaf8>):
+  
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:41:21 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `new' for #<Deck:0x00007f84b49593a0>):
+  
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:42:22 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 12ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:45:36 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:47:01 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 15:47:51 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:47:55 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"user"=>{"deck"=>{"name"=>"g", "description"=>"g"}}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:51:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:19:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:49:23 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+{ "user": { "username": "midna", "deck":{ "name":"new","description":"new deck" }}
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at '{ "user": { "username": "midna", "deck":{ "name":"new","description":"new deck" }}'):
+  
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:50:09 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+"deck":{ "name":"new","description":"new deck", "user": {"username:"midna"} }
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at ':{ "name":"new","description":"new deck", "user": {"username:"midna"} }'):
+  
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:50:29 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+"deck":{ "name":"new","description":"new deck" }
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at ':{ "name":"new","description":"new deck" }'):
+  
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:50:39 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+"deck":{ "name":"new","description":"new deck" }
+  
+ActionDispatch::Http::Parameters::ParseError (765: unexpected token at ':{ "name":"new","description":"new deck" }'):
+  
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:51:02 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:51:26 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck", "user"=>{"username"=>"midna"}}}
+Unpermitted parameter: :user
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 15:51:43 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck", "user"=>{"username"=>"midna"}}}
+Unpermitted parameter: :user
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 16:25:57 -0600
+Processing by Api::V1::DecksController#create as application/vnd.moneydesktop.v2+json
+  Parameters: {"deck"=>{"name"=>"new", "description"=>"new deck"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:21
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 16:26:57 -0600
+Processing by Api::V1::DecksController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:51:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:19:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 16:27:11 -0600
+Processing by Api::V1::DecksController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:51:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:19:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 16:36:52 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"user"=>{"deck"=>{"name"=>"g", "description"=>"g"}}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:51:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:19:in `create'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 17:34:31 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 17:59:27 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 17:59:34 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"user"=>{"deck"=>{"name"=>"ji", "description"=>"khgjhb"}}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: decks):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 17:59:56 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"user"=>{"deck"=>{"name"=>"ji", "description"=>"khgjhb"}}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 17:59:56 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"user"=>{"deck"=>{"name"=>"ji", "description"=>"khgjhb"}}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 17:59:56 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"user"=>{"deck"=>{"name"=>"ji", "description"=>"khgjhb"}}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:00:53 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 18:01:05 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"user"=>{"deck"=>{"name"=>"l", "description"=>"hgh"}}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 18:04:39 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"user"=>{"deck"=>{"name"=>"l", "description"=>"hgh"}}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:06:19 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/darlenewelch/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:07:17 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 18:07:23 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"user"=>{"deck"=>{"name"=>"darlene"}}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:08:05 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 18:08:09 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"dee"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 21ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:09:15 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:09:19 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"j"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:09:22 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"j"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:09:27 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"j"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:10:30 -0600
+Processing by Api::V1::DecksController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:11:03 -0600
+Processing by Api::V1::DecksController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:11:59 -0600
+Processing by Api::V1::DecksController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:11:59 -0600
+Processing by Api::V1::DecksController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:12:50 -0600
+Processing by Api::V1::DecksController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:14:05 -0600
+Processing by Api::V1::DecksController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 18:15:59 -0600
+Processing by Api::V1::DecksController#create as */*
+  Parameters: {"user"=>{"username"=>"darlene"}, "deck"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: deck):
+  
+app/controllers/api/v1/decks_controller.rb:53:in `deck_params'
+app/controllers/api/v1/decks_controller.rb:21:in `create'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:16:09 -0600
+Processing by Api::V1::UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darlene"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:16:34 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darlene"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:16:47 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darlene"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:17:50 -0600
+Processing by Api::V1::UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darlene"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:17:51 -0600
+Processing by Api::V1::UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darlene"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:17:52 -0600
+Processing by Api::V1::UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darlene"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:17:53 -0600
+Processing by Api::V1::UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darlene"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 18:17:53 -0600
+Processing by Api::V1::UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darlene"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-10-18 18:20:09 -0600
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "darlene"], ["created_at", "2018-10-19 00:20:09.804295"], ["updated_at", "2018-10-19 00:20:09.804295"]]
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:28
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 4.1ms)
+
+
+  
+NoMethodError (undefined method `user_url' for #<Api::V1::UsersController:0x00007fa06d0d11e0>):
+  
+app/controllers/api/v1/users_controller.rb:29:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-10-18 18:22:15 -0600
+  
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  
+config/routes.rb:7:in `block (3 levels) in <main>'
+config/routes.rb:3:in `block (2 levels) in <main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-10-18 18:22:55 -0600
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "darlene"], ["created_at", "2018-10-19 00:22:55.439743"], ["updated_at", "2018-10-19 00:22:55.439743"]]
+  ↳ app/controllers/api/v1/users_controller.rb:28
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:28
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `user_url' for #<Api::V1::UsersController:0x00007fa06dcdecf8>):
+  
+app/controllers/api/v1/users_controller.rb:29:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-10-18 18:24:03 -0600
+  
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  
+config/routes.rb:7:in `block (3 levels) in <main>'
+config/routes.rb:3:in `block (2 levels) in <main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-10-18 18:26:19 -0600
+  
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  
+config/routes.rb:7:in `block (3 levels) in <main>'
+config/routes.rb:3:in `block (2 levels) in <main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-10-18 18:28:30 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/users"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-10-18 18:29:08 -0600
+  
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  
+config/routes.rb:7:in `block (3 levels) in <main>'
+config/routes.rb:3:in `block (2 levels) in <main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:14:17 -0600
+  
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  
+config/routes.rb:7:in `block (3 levels) in <main>'
+config/routes.rb:3:in `block (2 levels) in <main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:15:05 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/darlenewelch/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::DecksController#create as */*
+  Parameters: {"deck"=>{"name"=>"test"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 15ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:16:24 -0600
+Processing by Api::V1::DecksController#create as */*
+  Parameters: {"deck"=>{"name"=>"test", "user_id"=>1}}
+Unpermitted parameter: :user_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:16:26 -0600
+Processing by Api::V1::DecksController#create as */*
+  Parameters: {"deck"=>{"name"=>"test", "user_id"=>1}}
+Unpermitted parameter: :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:16:58 -0600
+Processing by Api::V1::DecksController#create as */*
+  Parameters: {"deck"=>{"name"=>"test", "user_id"=>1}}
+Unpermitted parameter: :user_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 12ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:17:50 -0600
+Processing by Api::V1::DecksController#create as */*
+  Parameters: {"deck"=>{"name"=>"test", "user_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (1.1ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "test"], ["created_at", "2018-10-19 02:17:50.216098"], ["updated_at", "2018-10-19 02:17:50.216098"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 4.7ms)
+
+
+  
+NoMethodError (undefined method `deck_url' for #<Api::V1::DecksController:0x00007fbd4aa4ba00>):
+  
+app/controllers/api/v1/decks_controller.rb:24:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:19:48 -0600
+Processing by Api::V1::DecksController#create as */*
+  Parameters: {"deck"=>{"name"=>"test", "user_id"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (0.8ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "test"], ["created_at", "2018-10-19 02:19:48.197645"], ["updated_at", "2018-10-19 02:19:48.197645"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.2ms)
+
+
+  
+ArgumentError (Unknown key: :through. Valid keys are: :class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :polymorphic, :touch, :counter_cache, :optional, :default):
+  
+app/models/card.rb:2:in `<class:Card>'
+app/models/card.rb:1:in `<main>'
+app/controllers/api/v1/decks_controller.rb:24:in `create'
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:21:47 -0600
+Processing by Api::V1::DecksController#create as */*
+  Parameters: {"deck"=>{"name"=>"test", "user_id"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (0.4ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "test"], ["created_at", "2018-10-19 02:21:47.478843"], ["updated_at", "2018-10-19 02:21:47.478843"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 25ms (Views: 6.5ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 20:23:57 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/decks/create" for 127.0.0.1 at 2018-10-18 20:24:04 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/decks/create"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-18 20:24:36 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:24:45 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"hill house"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:24:50 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"hill house"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:24:51 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"hill house"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 4ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-18 20:24:51 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"hill house"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+

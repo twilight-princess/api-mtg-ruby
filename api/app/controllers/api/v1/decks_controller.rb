@@ -11,6 +11,8 @@ module Api::V1
 
     # GET /decks/1
     def show
+      @deck = Deck.find(params[:id])
+
       render json: @deck
     end
 
@@ -19,7 +21,7 @@ module Api::V1
       @deck = Deck.new(deck_params)
 
       if @deck.save
-        render json: @deck, status: :created, location: @deck
+        render json: @deck, status: :created
       else
         render json: @deck.errors, status: :unprocessable_entity
       end
@@ -48,7 +50,7 @@ module Api::V1
 
     # Only allow a trusted parameter "white list" through.
     def deck_params
-      params.require(:deck).permit(:type, :name, :description, :url, :cards)
+      params.require(:deck).permit(:type, :name, :description, :url, :cards, :user_id)
     end
-  end
+		end
 end

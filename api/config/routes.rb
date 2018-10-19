@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :decks
-      post 'users/login', 'users#login'
+      post 'users/login', to: 'users#login'
+      post 'users', to: 'users#create'
       resources :users
     end
   end

@@ -5,7 +5,7 @@ import thunk from "redux-thunk"
 const baseUrl = process.env.BASE_URL
 
 const initialState = {
-    deck: [],
+    deck: "",
     foundCard: {
         name: "",
         colors: [],
@@ -35,7 +35,7 @@ const reducer = (prevState = initialState, action) => {
         case "CREATE_DECK":
             return {
                 ...prevState,
-                currentUser: action.user
+                deck: action.deck
             }
         case "ADD_TO_DECK":
             console.log("PrevState: ", prevState.currentUser.decks[0].cards)
@@ -171,15 +171,17 @@ export const logout = () => {
     }
 }
 
-export const createDeck = (name, details) => {
+export const createDeck = (name, description) => {
     return dispatch => {
-        axios.post('http://localhost:3000/api/v1/decks', {userId: store.getState().currentUser._id, deck: {name: name, details: details}})
+        axios.post('http://localhost:3000/api/v1/decks', { deck: { name: name, description: description, user_id: user.id }})
             .then(response => {
                 if (response) {
                     store.dispatch({
                         type: "CREATE_DECK",
-                        user: response.data
+                        deck: response.data
                     })
+                } else {
+                    console.log(response.data)
                 }
             })
     }
