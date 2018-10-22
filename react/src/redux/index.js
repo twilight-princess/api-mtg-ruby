@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from "redux"
 import axios from "axios"
 import thunk from "redux-thunk"
 
-const baseUrl = process.env.BASE_URL
+// const baseUrl = process.env.BASE_URL
 
 const initialState = {
     deck: "",
@@ -173,7 +173,7 @@ export const logout = () => {
 
 export const createDeck = (name, description) => {
     return dispatch => {
-        axios.post('http://localhost:3000/api/v1/decks', { deck: { name: name, description: description, user_id: user.id }})
+        axios.post('http://localhost:3000/api/v1/decks', { deck: { name: name, description: description, user_id: store.getState().currentUser.id }})
             .then(response => {
                 if (response) {
                     store.dispatch({
