@@ -3515,3 +3515,618 @@ Processing by Api::V1::DecksController#create as HTML
 Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
 
 
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 20:53:29 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-21 20:54:10 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"deck name"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 90ms (Views: 1.8ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 20:58:21 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-21 20:58:30 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"deckdeckdeckdeckdeck", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (3.2ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["description", "deckdeckdeckdeckdeck"], ["created_at", "2018-10-22 02:58:30.962733"], ["updated_at", "2018-10-22 02:58:30.962733"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 119ms (Views: 44.5ms | ActiveRecord: 14.4ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 21:00:40 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-21 21:00:50 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"deckaloni", "user_id"=>1}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (1.9ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "deckaloni"], ["created_at", "2018-10-22 03:00:50.618652"], ["updated_at", "2018-10-22 03:00:50.618652"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 48ms (Views: 2.6ms | ActiveRecord: 15.3ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 21:08:54 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `joins' for #<User:0x00007fbf001a6500>):
+  
+app/controllers/api/v1/users_controller.rb:19:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 21:09:10 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `join' for #<User:0x00007fbef48db980>):
+  
+app/controllers/api/v1/users_controller.rb:19:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 21:10:02 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 65ms (Views: 1.8ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-21 21:10:43 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"user_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (0.7ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2018-10-22 03:10:43.675310"], ["updated_at", "2018-10-22 03:10:43.675310"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 63ms (Views: 12.8ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-21 21:11:22 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"u", "description"=>"h", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (0.7ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "u"], ["description", "h"], ["created_at", "2018-10-22 03:11:22.113588"], ["updated_at", "2018-10-22 03:11:22.113588"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 32ms (Views: 3.8ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 21:11:34 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 8ms (Views: 2.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:02:33 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"tink"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tink"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-21 22:02:44 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"i want to see"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+Completed 422 Unprocessable Entity in 54ms (Views: 1.0ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:03:05 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 29ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:05:56 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.6ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 5.8ms)
+
+
+  
+NoMethodError (undefined method `references' for #<User:0x00007f4ac89eb938>):
+  
+app/controllers/api/v1/users_controller.rb:19:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:05:58 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (1.4ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `references' for #<User:0x00007f4ac8bdaeb0>):
+  
+app/controllers/api/v1/users_controller.rb:19:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:09:16 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 113ms (Views: 0.9ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-21 22:09:31 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"my husband is mean", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (4.3ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "my husband is mean"], ["created_at", "2018-10-22 04:09:31.560818"], ["updated_at", "2018-10-22 04:09:31.560818"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 70ms (Views: 24.7ms | ActiveRecord: 22.2ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:10:43 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.6ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:12:43 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT  DISTINCT "users"."id" FROM "users" LEFT OUTER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[35mSQL (0.8ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."username" AS t0_r1, "users"."created_at" AS t0_r2, "users"."updated_at" AS t0_r3, "decks"."id" AS t1_r0, "decks"."user_id" AS t1_r1, "decks"."type" AS t1_r2, "decks"."name" AS t1_r3, "decks"."description" AS t1_r4, "decks"."url" AS t1_r5, "decks"."cards" AS t1_r6, "decks"."created_at" AS t1_r7, "decks"."updated_at" AS t1_r8 FROM "users" LEFT OUTER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? AND "users"."id" = ?[0m  [["username", "midna"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 60ms (Views: 1.2ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:13:25 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT  DISTINCT "users"."id" FROM "users" LEFT OUTER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[35mSQL (0.8ms)[0m  [1m[34mSELECT "users"."id" AS t0_r0, "users"."username" AS t0_r1, "users"."created_at" AS t0_r2, "users"."updated_at" AS t0_r3, "decks"."id" AS t1_r0, "decks"."user_id" AS t1_r1, "decks"."type" AS t1_r2, "decks"."name" AS t1_r3, "decks"."description" AS t1_r4, "decks"."url" AS t1_r5, "decks"."cards" AS t1_r6, "decks"."created_at" AS t1_r7, "decks"."updated_at" AS t1_r8 FROM "users" LEFT OUTER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? AND "users"."id" = ?[0m  [["username", "midna"], ["id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:20:37 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `join' for #<Class:0x00007f4ac870d1f8>
+Did you mean?  joins):
+  
+app/controllers/api/v1/users_controller.rb:19:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:20:38 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `join' for #<Class:0x00007f4ac870d1f8>
+Did you mean?  joins):
+  
+app/controllers/api/v1/users_controller.rb:19:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:22:16 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `join' for #<Class:0x00007f4ac8bd91c8>
+Did you mean?  joins):
+  
+app/controllers/api/v1/users_controller.rb:19:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:23:03 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (The method .joins() must contain arguments.):
+  
+app/controllers/api/v1/users_controller.rb:19:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:23:21 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 32ms (Views: 1.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:23:40 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "decks" ON "decks"."user_id" = "users"."id" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-21 22:25:53 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"name"=>"f", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (1.2ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["name", "f"], ["created_at", "2018-10-22 04:25:53.183577"], ["updated_at", "2018-10-22 04:25:53.183577"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 9]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 94ms (Views: 13.3ms | ActiveRecord: 15.2ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:32:20 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.6ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 9]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+Completed 200 OK in 96ms (Views: 62.2ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:35:26 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"darlene"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "darlene"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 22ms (Views: 1.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:39:25 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:51:05 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:52:30 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:53:28 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:55:54 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 204 No Content in 17ms (ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:56:47 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:58:35 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 22:59:35 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:00:28 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 204 No Content in 18ms (ActiveRecord: 2.5ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:01:33 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 204 No Content in 3ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:07:30 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 204 No Content in 7ms (ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:09:56 -0600
+  
+SyntaxError (/home/tink/crafts/api-mtg-ruby/api/app/controllers/api/v1/users_controller.rb:62: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/users_controller.rb:62: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:10:25 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 3.7ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<Api::V1::UsersController:0x00007f58500d63a8>
+Did you mean?  respond_to?):
+  
+app/controllers/api/v1/users_controller.rb:21:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:11:40 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 2.8ms)
+
+
+  
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:11:41 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.2ms)
+
+
+NoMethodError (undefined method `respond_to' for #<Api::V1::UsersController:0x00007f5858636bb0>
+Did you mean?  respond_to?):
+  
+  
+app/controllers/api/v1/users_controller.rb:21:in `login'
+NoMethodError (undefined method `respond_to' for #<Api::V1::UsersController:0x00007f5848508618>
+Did you mean?  respond_to?):
+  
+app/controllers/api/v1/users_controller.rb:21:in `login'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:12:21 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:13:44 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-21 23:16:11 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 9]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+Completed 200 OK in 67ms (Views: 32.1ms | ActiveRecord: 5.6ms)
+
+
+Started PUT "/api/v1/decks/undefined" for 127.0.0.1 at 2018-10-21 23:24:03 -0600
+Processing by Api::V1::DecksController#update as HTML
+  Parameters: {"id"=>"undefined", "username"=>"midna", "decks"=>[{"id"=>1, "user_id"=>1, "name"=>"test", "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"f67e293db4266b7f3bb010f5ff5eda07f7cdd951", "name"=>"Caustic Crawler", "colors"=>["Black"], "manaCost"=>"{3}{B}{B}", "types"=>["Creature"], "description"=>"Landfall — Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn.", "power"=>"4", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198376&type=card"}], "created_at"=>"2018-10-19T02:17:50.216Z", "updated_at"=>"2018-10-19T02:17:50.216Z"}, {"id"=>2, "user_id"=>1, "name"=>"test", "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"f67e293db4266b7f3bb010f5ff5eda07f7cdd951", "name"=>"Caustic Crawler", "colors"=>["Black"], "manaCost"=>"{3}{B}{B}", "types"=>["Creature"], "description"=>"Landfall — Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn.", "power"=>"4", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198376&type=card"}], "created_at"=>"2018-10-19T02:19:48.197Z", "updated_at"=>"2018-10-19T02:19:48.197Z"}, {"id"=>3, "user_id"=>1, "name"=>"test", "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"f67e293db4266b7f3bb010f5ff5eda07f7cdd951", "name"=>"Caustic Crawler", "colors"=>["Black"], "manaCost"=>"{3}{B}{B}", "types"=>["Creature"], "description"=>"Landfall — Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn.", "power"=>"4", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198376&type=card"}], "created_at"=>"2018-10-19T02:21:47.478Z", "updated_at"=>"2018-10-19T02:21:47.478Z"}, {"id"=>4, "user_id"=>1, "name"=>nil, "description"=>"deckdeckdeckdeckdeck", "url"=>nil, "cards"=>[{"id"=>"f67e293db4266b7f3bb010f5ff5eda07f7cdd951", "name"=>"Caustic Crawler", "colors"=>["Black"], "manaCost"=>"{3}{B}{B}", "types"=>["Creature"], "description"=>"Landfall — Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn.", "power"=>"4", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198376&type=card"}], "created_at"=>"2018-10-22T02:58:30.962Z", "updated_at"=>"2018-10-22T02:58:30.962Z"}, {"id"=>5, "user_id"=>1, "name"=>"deckaloni", "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"f67e293db4266b7f3bb010f5ff5eda07f7cdd951", "name"=>"Caustic Crawler", "colors"=>["Black"], "manaCost"=>"{3}{B}{B}", "types"=>["Creature"], "description"=>"Landfall — Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn.", "power"=>"4", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198376&type=card"}], "created_at"=>"2018-10-22T03:00:50.618Z", "updated_at"=>"2018-10-22T03:00:50.618Z"}, {"id"=>6, "user_id"=>1, "name"=>nil, "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"f67e293db4266b7f3bb010f5ff5eda07f7cdd951", "name"=>"Caustic Crawler", "colors"=>["Black"], "manaCost"=>"{3}{B}{B}", "types"=>["Creature"], "description"=>"Landfall — Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn.", "power"=>"4", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198376&type=card"}], "created_at"=>"2018-10-22T03:10:43.675Z", "updated_at"=>"2018-10-22T03:10:43.675Z"}, {"id"=>7, "user_id"=>1, "name"=>"u", "description"=>"h", "url"=>nil, "cards"=>[{"id"=>"f67e293db4266b7f3bb010f5ff5eda07f7cdd951", "name"=>"Caustic Crawler", "colors"=>["Black"], "manaCost"=>"{3}{B}{B}", "types"=>["Creature"], "description"=>"Landfall — Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn.", "power"=>"4", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198376&type=card"}], "created_at"=>"2018-10-22T03:11:22.113Z", "updated_at"=>"2018-10-22T03:11:22.113Z"}, {"id"=>8, "user_id"=>1, "name"=>"my husband is mean", "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"f67e293db4266b7f3bb010f5ff5eda07f7cdd951", "name"=>"Caustic Crawler", "colors"=>["Black"], "manaCost"=>"{3}{B}{B}", "types"=>["Creature"], "description"=>"Landfall — Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn.", "power"=>"4", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198376&type=card"}], "created_at"=>"2018-10-22T04:09:31.560Z", "updated_at"=>"2018-10-22T04:09:31.560Z"}, {"id"=>9, "user_id"=>1, "name"=>"f", "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"f67e293db4266b7f3bb010f5ff5eda07f7cdd951", "name"=>"Caustic Crawler", "colors"=>["Black"], "manaCost"=>"{3}{B}{B}", "types"=>["Creature"], "description"=>"Landfall — Whenever a land enters the battlefield under your control, you may have target creature get -1/-1 until end of turn.", "power"=>"4", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198376&type=card"}], "created_at"=>"2018-10-22T04:25:53.183Z", "updated_at"=>"2018-10-22T04:25:53.183Z"}], "deck"=>{"id"=>"undefined"}}
+  [1m[36mDeck Load (0.7ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:48
+Completed 404 Not Found in 7ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/api/v1/decks_controller.rb:48:in `set_deck'

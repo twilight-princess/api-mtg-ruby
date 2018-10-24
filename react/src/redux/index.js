@@ -173,7 +173,7 @@ export const logout = () => {
 
 export const createDeck = (name, description) => {
     return dispatch => {
-        axios.post('http://localhost:3000/api/v1/decks', { deck: { name: name, description: description, user_id: user.id }})
+        axios.post('http://localhost:3000/api/v1/decks', { deck: { name: name, description: description, user_id: store.getState().currentUser.id }})
             .then(response => {
                 if (response) {
                     store.dispatch({

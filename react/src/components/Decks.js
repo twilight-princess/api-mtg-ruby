@@ -26,7 +26,7 @@ class Decks extends Component {
     handleCreateDeck(e) {
         console.log(`Created user deck: ${this.state.deckName}`)
         e.preventDefault()
-        this.setState(createDeck(this.state.username, this.state.deckName, this.state.deckDescription))
+        this.setState(createDeck(this.state.deckName, this.state.deckDescription))
     }
 
     render() {
