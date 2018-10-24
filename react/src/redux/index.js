@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from "redux"
 import axios from "axios"
 import thunk from "redux-thunk"
 
-const baseUrl = process.env.BASE_URL
+// const baseUrl = process.env.BASE_URL
 
 const initialState = {
     deck: "",
