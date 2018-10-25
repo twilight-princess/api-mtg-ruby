@@ -187,9 +187,9 @@ export const createDeck = (name, description) => {
     }
 }
 
-export const saveDeckToDB = (deck) => {
+export const saveDeckToDB = (deck, cards) => {
     return dispatch => {
-        axios.put('http://localhost:3000/api/v1/decks/'+ store.getState().currentUser._id, store.getState().currentUser)
+        axios.put('http://localhost:3000/api/v1/decks/'+ store.getState().currentUser.id, { deck: { cards: [...deck.cards, ...cards] }})
             .then(response => {
                 if (response) {
                     store.dispatch({

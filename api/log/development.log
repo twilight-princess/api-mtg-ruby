@@ -3550,3 +3550,199 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-22 20:32:40 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/darlenewelch/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-22 20:33:10 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"oop", "user_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (0.5ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["description", "oop"], ["created_at", "2018-10-23 02:33:11.029884"], ["updated_at", "2018-10-23 02:33:11.029884"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 28ms (Views: 6.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-22 20:33:50 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"oop", "user_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (0.7ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["description", "oop"], ["created_at", "2018-10-23 02:33:50.185626"], ["updated_at", "2018-10-23 02:33:50.185626"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 7ms (Views: 1.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-22 20:34:07 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"oop", "user_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (0.7ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["description", "oop"], ["created_at", "2018-10-23 02:34:07.308021"], ["updated_at", "2018-10-23 02:34:07.308021"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 8ms (Views: 1.1ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-22 20:37:32 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"oop", "user_id"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (0.4ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["description", "oop"], ["created_at", "2018-10-23 02:37:32.850991"], ["updated_at", "2018-10-23 02:37:32.850991"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 22ms (Views: 3.5ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/v1/decks" for 127.0.0.1 at 2018-10-22 20:37:34 -0600
+Processing by Api::V1::DecksController#create as HTML
+  Parameters: {"deck"=>{"description"=>"oop", "user_id"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mDeck Create (0.7ms)[0m  [1m[32mINSERT INTO "decks" ("user_id", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["description", "oop"], ["created_at", "2018-10-23 02:37:34.182389"], ["updated_at", "2018-10-23 02:37:34.182389"]]
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/decks_controller.rb:23
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/decks_controller.rb:24
+Completed 201 Created in 6ms (Views: 0.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-22 20:37:41 -0600
+  
+SyntaxError (/Users/darlenewelch/rubies/api-mtg-ruby/api/app/controllers/api/v1/users_controller.rb:21: syntax error, unexpected '}', expecting =>
+...@user.to_json(include: {:decks} ), status: :ok
+...                              ^):
+  
+app/controllers/api/v1/users_controller.rb:21: syntax error, unexpected '}', expecting =>
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-22 20:37:43 -0600
+  
+SyntaxError (/Users/darlenewelch/rubies/api-mtg-ruby/api/app/controllers/api/v1/users_controller.rb:21: syntax error, unexpected '}', expecting =>
+...@user.to_json(include: {:decks} ), status: :ok
+...                              ^):
+  
+app/controllers/api/v1/users_controller.rb:21: syntax error, unexpected '}', expecting =>
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-22 20:38:25 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-22 20:39:49 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-23 13:20:44 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/darlenewelch/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+Completed 200 OK in 27ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started PUT "/api/v1/decks/undefined" for 127.0.0.1 at 2018-10-23 13:21:20 -0600
+Processing by Api::V1::DecksController#update as HTML
+  Parameters: {"id"=>"undefined", "username"=>"midna", "created_at"=>"2018-10-16T05:02:42.633Z", "updated_at"=>"2018-10-16T05:02:42.633Z", "decks"=>[{"id"=>1, "user_id"=>1, "name"=>"test", "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"8fd53bf75794c6959d3600db17b5992198e39f0c", "name"=>"Wandering Mage", "colors"=>["White", "Blue", "Black"], "manaCost"=>"{W}{U}{B}", "types"=>["Creature"], "description"=>"{W}, Pay 1 life: Prevent the next 2 damage that would be dealt to target creature this turn.\n{U}: Prevent the next 1 damage that would be dealt to target Cleric or Wizard creature this turn.\n{B}, Put a -1/-1 counter on a creature you control: Prevent the next 2 damage that would be dealt to target player or planeswalker this turn.", "power"=>"0", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201179&type=card"}], "created_at"=>"2018-10-19T02:17:50.216Z", "updated_at"=>"2018-10-19T02:17:50.216Z"}, {"id"=>2, "user_id"=>1, "name"=>"test", "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"8fd53bf75794c6959d3600db17b5992198e39f0c", "name"=>"Wandering Mage", "colors"=>["White", "Blue", "Black"], "manaCost"=>"{W}{U}{B}", "types"=>["Creature"], "description"=>"{W}, Pay 1 life: Prevent the next 2 damage that would be dealt to target creature this turn.\n{U}: Prevent the next 1 damage that would be dealt to target Cleric or Wizard creature this turn.\n{B}, Put a -1/-1 counter on a creature you control: Prevent the next 2 damage that would be dealt to target player or planeswalker this turn.", "power"=>"0", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201179&type=card"}], "created_at"=>"2018-10-19T02:19:48.197Z", "updated_at"=>"2018-10-19T02:19:48.197Z"}, {"id"=>3, "user_id"=>1, "name"=>"test", "description"=>nil, "url"=>nil, "cards"=>[{"id"=>"8fd53bf75794c6959d3600db17b5992198e39f0c", "name"=>"Wandering Mage", "colors"=>["White", "Blue", "Black"], "manaCost"=>"{W}{U}{B}", "types"=>["Creature"], "description"=>"{W}, Pay 1 life: Prevent the next 2 damage that would be dealt to target creature this turn.\n{U}: Prevent the next 1 damage that would be dealt to target Cleric or Wizard creature this turn.\n{B}, Put a -1/-1 counter on a creature you control: Prevent the next 2 damage that would be dealt to target player or planeswalker this turn.", "power"=>"0", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201179&type=card"}], "created_at"=>"2018-10-19T02:21:47.478Z", "updated_at"=>"2018-10-19T02:21:47.478Z"}, {"id"=>4, "user_id"=>1, "name"=>nil, "description"=>"oop", "url"=>nil, "cards"=>[{"id"=>"8fd53bf75794c6959d3600db17b5992198e39f0c", "name"=>"Wandering Mage", "colors"=>["White", "Blue", "Black"], "manaCost"=>"{W}{U}{B}", "types"=>["Creature"], "description"=>"{W}, Pay 1 life: Prevent the next 2 damage that would be dealt to target creature this turn.\n{U}: Prevent the next 1 damage that would be dealt to target Cleric or Wizard creature this turn.\n{B}, Put a -1/-1 counter on a creature you control: Prevent the next 2 damage that would be dealt to target player or planeswalker this turn.", "power"=>"0", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201179&type=card"}], "created_at"=>"2018-10-23T02:33:11.029Z", "updated_at"=>"2018-10-23T02:33:11.029Z"}, {"id"=>5, "user_id"=>1, "name"=>nil, "description"=>"oop", "url"=>nil, "cards"=>[{"id"=>"8fd53bf75794c6959d3600db17b5992198e39f0c", "name"=>"Wandering Mage", "colors"=>["White", "Blue", "Black"], "manaCost"=>"{W}{U}{B}", "types"=>["Creature"], "description"=>"{W}, Pay 1 life: Prevent the next 2 damage that would be dealt to target creature this turn.\n{U}: Prevent the next 1 damage that would be dealt to target Cleric or Wizard creature this turn.\n{B}, Put a -1/-1 counter on a creature you control: Prevent the next 2 damage that would be dealt to target player or planeswalker this turn.", "power"=>"0", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201179&type=card"}], "created_at"=>"2018-10-23T02:33:50.185Z", "updated_at"=>"2018-10-23T02:33:50.185Z"}, {"id"=>6, "user_id"=>1, "name"=>nil, "description"=>"oop", "url"=>nil, "cards"=>[{"id"=>"8fd53bf75794c6959d3600db17b5992198e39f0c", "name"=>"Wandering Mage", "colors"=>["White", "Blue", "Black"], "manaCost"=>"{W}{U}{B}", "types"=>["Creature"], "description"=>"{W}, Pay 1 life: Prevent the next 2 damage that would be dealt to target creature this turn.\n{U}: Prevent the next 1 damage that would be dealt to target Cleric or Wizard creature this turn.\n{B}, Put a -1/-1 counter on a creature you control: Prevent the next 2 damage that would be dealt to target player or planeswalker this turn.", "power"=>"0", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201179&type=card"}], "created_at"=>"2018-10-23T02:34:07.308Z", "updated_at"=>"2018-10-23T02:34:07.308Z"}, {"id"=>7, "user_id"=>1, "name"=>nil, "description"=>"oop", "url"=>nil, "cards"=>[{"id"=>"8fd53bf75794c6959d3600db17b5992198e39f0c", "name"=>"Wandering Mage", "colors"=>["White", "Blue", "Black"], "manaCost"=>"{W}{U}{B}", "types"=>["Creature"], "description"=>"{W}, Pay 1 life: Prevent the next 2 damage that would be dealt to target creature this turn.\n{U}: Prevent the next 1 damage that would be dealt to target Cleric or Wizard creature this turn.\n{B}, Put a -1/-1 counter on a creature you control: Prevent the next 2 damage that would be dealt to target player or planeswalker this turn.", "power"=>"0", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201179&type=card"}], "created_at"=>"2018-10-23T02:37:32.850Z", "updated_at"=>"2018-10-23T02:37:32.850Z"}, {"id"=>8, "user_id"=>1, "name"=>nil, "description"=>"oop", "url"=>nil, "cards"=>[{"id"=>"8fd53bf75794c6959d3600db17b5992198e39f0c", "name"=>"Wandering Mage", "colors"=>["White", "Blue", "Black"], "manaCost"=>"{W}{U}{B}", "types"=>["Creature"], "description"=>"{W}, Pay 1 life: Prevent the next 2 damage that would be dealt to target creature this turn.\n{U}: Prevent the next 1 damage that would be dealt to target Cleric or Wizard creature this turn.\n{B}, Put a -1/-1 counter on a creature you control: Prevent the next 2 damage that would be dealt to target player or planeswalker this turn.", "power"=>"0", "toughness"=>"3", "image"=>"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201179&type=card"}], "created_at"=>"2018-10-23T02:37:34.182Z", "updated_at"=>"2018-10-23T02:37:34.182Z"}], "deck"=>{"id"=>"undefined", "created_at"=>"2018-10-16T05:02:42.633Z", "updated_at"=>"2018-10-16T05:02:42.633Z"}}
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT  "decks".* FROM "decks" WHERE "decks"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/decks_controller.rb:48
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Deck with 'id'=undefined):
+  
+app/controllers/api/v1/decks_controller.rb:48:in `set_deck'
