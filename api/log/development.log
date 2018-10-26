@@ -4370,3 +4370,161 @@ app/controllers/api/v1/decks_controller.rb:48:in `set_deck'
 =======
 >>>>>>> c1b1efdd77b0c439855edd86afe79ea83e92b1ca
 >>>>>>> bfe5ed88b1bbd5a361deb3ba9400c12b37de438c
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-25 20:17:23 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/darlenewelch/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/darlenewelch/rubies/api-mtg-ruby/api/app/controllers/api/v1/users_controller.rb:21: syntax error, unexpected <<, expecting keyword_end
+<<<<<<< HEAD
+^~
+/Users/darlenewelch/rubies/api-mtg-ruby/api/app/controllers/api/v1/users_controller.rb:23: syntax error, unexpected ===, expecting keyword_end
+=======
+^~~
+/Users/darlenewelch/rubies/api-mtg-ruby/api/app/controllers/api/v1/users_controller.rb:29: syntax error, unexpected >>, expecting keyword_end
+>>>>>>> bfe5ed88b1bbd5a361deb3b...
+^~):
+  
+app/controllers/api/v1/users_controller.rb:21: syntax error, unexpected <<, expecting keyword_end
+app/controllers/api/v1/users_controller.rb:23: syntax error, unexpected ===, expecting keyword_end
+app/controllers/api/v1/users_controller.rb:29: syntax error, unexpected >>, expecting keyword_end
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-25 20:22:19 -0600
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-25 20:22:29 -0600
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-25 20:22:29 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+Completed 200 OK in 43ms (Views: 26.9ms | ActiveRecord: 2.3ms)
+
+
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 1]]
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+Completed 200 OK in 31ms (Views: 20.0ms | ActiveRecord: 1.2ms)
+
+
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+Completed 200 OK in 38ms (Views: 25.2ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/v1/users/login" for 127.0.0.1 at 2018-10-25 20:24:47 -0600
+Processing by Api::V1::UsersController#login as HTML
+  Parameters: {"user"=>{"username"=>"midna"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "midna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19
+  [1m[36mDeck Load (0.1ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 6]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 7]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."deck_id" = ?[0m  [["deck_id", 8]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddCardsToDeck (20181026045356)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181026045356"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
