@@ -18,7 +18,15 @@ module Api::V1
     def login
       @user = User.find_by_username(user_params[:username])
 
+<<<<<<< HEAD
       render json: @user.to_json(include: [:decks] ), status: :ok
+=======
+      render json: {
+        id: @user.id,
+        username: @user.username,
+        decks: @user.decks
+      }
+>>>>>>> bfe5ed88b1bbd5a361deb3ba9400c12b37de438c
     end
 
     # POST /users
