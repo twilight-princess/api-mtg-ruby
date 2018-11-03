@@ -39,7 +39,7 @@
   "license": "ISC",
   "description": "",
   "proxy": {
-    "../api": {
+    "../.": {
       "target": "http://localhost:3000"
     }
   }
