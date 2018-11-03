@@ -19,9 +19,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.4",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
-  },
-  "dependencies": {
+    "redux-thunk": "^2.3.0",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^10.0.0"
@@ -31,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "cd app/public && npm install --only-dev && npm install && npm run build"
+    "heroku-postbuild": "cd public && npm install --only-dev && npm install && npm run build"
   },
   "engines": {
     "node": "8.10.0"
