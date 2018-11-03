@@ -1,1 +1,11 @@
-web: api/bundle exec rails s
+{
+    "name": "react-and-rails",
+      "engines": {
+            "node": "8.11.4"
+              },
+                "scripts": {
+                      "build": "cd client && npm install && npm run build && cd ..",
+                          "deploy": "cp -a client/build/. public/",
+                              "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+                                }
+}
