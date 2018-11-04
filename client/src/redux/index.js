@@ -139,7 +139,7 @@ export const createUser = (username) => {
                 if (response) {
                     store.dispatch({
                         type: "LOGIN",
-                        user: response.data.user
+                        user: response.data
                     })
                 }
             })
@@ -189,7 +189,7 @@ export const createDeck = (name, description) => {
 
 export const saveDeckToDB = (deck, cards) => {
     return dispatch => {
-        axios.put('/api/v1/decks/'+ store.getState().currentUser.id, { deck: { cards: [...deck.cards, ...cards] }})
+        axios.put('/api/v1/decks/'+ deck.id, { deck: { cards: [...deck.cards, ...cards] }})
             .then(response => {
                 if (response) {
                     store.dispatch({
