@@ -194,7 +194,7 @@ export const saveDeckToDB = (deck, cards) => {
                 if (response) {
                     store.dispatch({
                         type: "SAVE_DECK",
-                        decks: response.data.decks
+                        decks: response.data
                     })
                 }
             })
