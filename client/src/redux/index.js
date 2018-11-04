@@ -134,7 +134,7 @@ export const addToDeck = (card, deckId) => {
 
 export const createUser = (username) => {
     return dispatch => {
-        axios.post('http://localhost:3000/api/v1/users/', {username: username})
+        axios.post('/api/v1/users/', {username: username})
             .then(response => {
                 if (response) {
                     store.dispatch({
@@ -148,7 +148,7 @@ export const createUser = (username) => {
 
 export const login = (user) => {
     return dispatch => {
-        axios.post('http://localhost:3000/api/v1/users/login', {user: { username: user }})
+        axios.post('/api/v1/users/login', {user: { username: user }})
             .then(response => {
                 if (response) {
                     store.dispatch({
@@ -173,7 +173,7 @@ export const logout = () => {
 
 export const createDeck = (name, description) => {
     return dispatch => {
-        axios.post('http://localhost:3000/api/v1/decks', { deck: { name: name, description: description, user_id: store.getState().currentUser.id }})
+        axios.post('/api/v1/decks', { deck: { name: name, description: description, user_id: store.getState().currentUser.id }})
             .then(response => {
                 if (response) {
                     store.dispatch({
@@ -189,7 +189,7 @@ export const createDeck = (name, description) => {
 
 export const saveDeckToDB = (deck, cards) => {
     return dispatch => {
-        axios.put('http://localhost:3000/api/v1/decks/'+ store.getState().currentUser.id, { deck: { cards: [...deck.cards, ...cards] }})
+        axios.put('/api/v1/decks/'+ store.getState().currentUser.id, { deck: { cards: [...deck.cards, ...cards] }})
             .then(response => {
                 if (response) {
                     store.dispatch({
