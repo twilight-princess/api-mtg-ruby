@@ -1,2 +1,2 @@
-cpclass CardsController < ApplicationController
+class CardsController < ApplicationController
 end
