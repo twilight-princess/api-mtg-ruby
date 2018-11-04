@@ -12,17 +12,26 @@
 
 ActiveRecord::Schema.define(version: 2018_10_26_045356) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cards", force: :cascade do |t|
-    t.integer "deck_id"
+    t.bigint "deck_id"
+    t.string "name"
     t.text "description"
     t.integer "position"
+    t.integer "type"
+    t.integer "color"
+    t.string "url"
+    t.integer "toughness"
+    t.integer "power"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["deck_id"], name: "index_cards_on_deck_id"
   end
 
   create_table "decks", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "type"
     t.string "name"
     t.text "description"
@@ -39,4 +48,6 @@ ActiveRecord::Schema.define(version: 2018_10_26_045356) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cards", "decks"
+  add_foreign_key "decks", "users"
 end
