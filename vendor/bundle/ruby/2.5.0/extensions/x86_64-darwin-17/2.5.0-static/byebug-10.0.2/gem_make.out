@@ -1,0 +1,19 @@
+current directory: /Users/darlenewelch/rubies/api-mtg-ruby/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+/Users/darlenewelch/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20181115-59160-15xt497.rb extconf.rb
+creating Makefile
+
+current directory: /Users/darlenewelch/rubies/api-mtg-ruby/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/darlenewelch/rubies/api-mtg-ruby/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/darlenewelch/rubies/api-mtg-ruby/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20181115-59160-6e624r/byebug

@@ -1,7 +1,14 @@
 {
-  "main.css": "static/css/main.5b4bfded.css",
-  "main.css.map": "static/css/main.5b4bfded.css.map",
-  "main.js": "static/js/main.dfbc7e1f.js",
-  "main.js.map": "static/js/main.dfbc7e1f.js.map",
-  "static/media/magicCard.jpg": "static/media/magicCard.d61a85a5.jpg"
+  "main.css": "/static/css/main.dedcfcdc.chunk.css",
+  "main.js": "/static/js/main.1cd5db5a.chunk.js",
+  "main.js.map": "/static/js/main.1cd5db5a.chunk.js.map",
+  "static/js/1.07694c69.chunk.js": "/static/js/1.07694c69.chunk.js",
+  "static/js/1.07694c69.chunk.js.map": "/static/js/1.07694c69.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
+  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "static/media/index.css": "/static/media/magicCard.d61a85a5.jpg",
+  "static/css/main.dedcfcdc.chunk.css.map": "/static/css/main.dedcfcdc.chunk.css.map",
+  "index.html": "/index.html",
+  "precache-manifest.457b55405425eaeff12745726eaae90e.js": "/precache-manifest.457b55405425eaeff12745726eaae90e.js",
+  "service-worker.js": "/service-worker.js"
 }

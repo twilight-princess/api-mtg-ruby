@@ -12,12 +12,12 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /home/tink/.rbenv/versions/2.5.3/include/ruby-2.5.0
+topdir = /Users/darlenewelch/.rbenv/versions/2.5.1/include/ruby-2.5.0
 hdrdir = $(topdir)
-arch_hdrdir = /home/tink/.rbenv/versions/2.5.3/include/ruby-2.5.0/x86_64-linux
+arch_hdrdir = /Users/darlenewelch/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin17
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/home/tink/.rbenv/versions/2.5.3
+prefix = $(DESTDIR)/Users/darlenewelch/.rbenv/versions/2.5.1
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +31,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = $(DESTDIR)./.gem.20181103-81-8gchjk
-sitelibdir = $(DESTDIR)./.gem.20181103-81-8gchjk
+sitearchdir = $(DESTDIR)./.gem.20181115-59160-10ns0m7
+sitelibdir = $(DESTDIR)./.gem.20181115-59160-10ns0m7
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -50,7 +50,7 @@ dvidir = $(docdir)
 htmldir = $(docdir)
 infodir = $(datarootdir)/info
 docdir = $(datarootdir)/doc/$(PACKAGE)
-oldincludedir = $(DESTDIR)/usr/include
+oldincludedir = $(SDKROOT)/usr/include
 includedir = $(prefix)/include
 localstatedir = $(prefix)/var
 sharedstatedir = $(prefix)/com
@@ -63,12 +63,12 @@ bindir = $(exec_prefix)/bin
 archdir = $(rubyarchdir)
 
 
-CC = gcc
-CXX = g++
+CC = clang
+CXX = clang++
 LIBRUBY = $(LIBRUBY_A)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
-LIBRUBYARG_SHARED = -Wl,-rpath,$(libdir) -L$(libdir) 
-LIBRUBYARG_STATIC = -Wl,-rpath,$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)-static
+LIBRUBYARG_SHARED = 
+LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static -framework Foundation
 empty =
 OUTFLAG = -o $(empty)
 COUTFLAG = -o $(empty)
@@ -79,30 +79,30 @@ cflags   = $(optflags) $(debugflags) $(warnflags)
 cxxflags = $(optflags) $(debugflags) $(warnflags)
 optflags = -O3
 debugflags = -ggdb3
-warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wimplicit-function-declaration -Wdeprecated-declarations -Wmisleading-indentation -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wimplicit-fallthrough=0 -Wduplicated-cond -Wrestrict
-CCDLFLAGS = -fPIC
-CFLAGS   = $(CCDLFLAGS) $(cflags) -I.. -Wall -O3 -g -std=gnu99 $(ARCH_FLAG)
+warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens
+CCDLFLAGS = -fno-common
+CFLAGS   = $(CCDLFLAGS)  -O3 -Wno-error=shorten-64-to-32  -pipe -I.. -Wall -O3 -g -std=gnu99 $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
-CPPFLAGS = -DHAVE_RUBY_ST_H -DHAVE_ST_H -DHAVE_RB_STR_REPLACE -DHAVE_RB_INTERN_STR -DHAVE_RB_SYM2STR -DHAVE_RB_STR_INTERN -DHAVE_RB_BLOCK_LAMBDA -DHAVE_RB_HASH_DUP -DHAVE_RB_HASH_CLEAR -I/home/tink/.rbenv/versions/2.5.3/include  $(DEFS) $(cppflags)
+CPPFLAGS = -DHAVE_RUBY_ST_H -DHAVE_ST_H -DHAVE_RB_STR_REPLACE -DHAVE_RB_INTERN_STR -DHAVE_RB_SYM2STR -DHAVE_RB_STR_INTERN -DHAVE_RB_BLOCK_LAMBDA -DHAVE_RB_HASH_DUP -DHAVE_RB_HASH_CLEAR -I/Users/darlenewelch/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = -L. -L/home/tink/.rbenv/versions/2.5.3/lib  -fstack-protector -rdynamic -Wl,-export-dynamic
-dldflags = -L/home/tink/.rbenv/versions/2.5.3/lib  -Wl,--compress-debug-sections=zlib 
+ldflags  = -L. -L/Users/darlenewelch/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib
+dldflags = -L/Users/darlenewelch/.rbenv/versions/2.5.1/lib  -Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress 
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
-LDSHARED = $(CC) -shared
-LDSHAREDXX = $(CXX) -shared
-AR = ar
+LDSHARED = $(CC) -dynamic -bundle
+LDSHAREDXX = $(CXX) -dynamic -bundle
+AR = libtool -static
 EXEEXT = 
 
 RUBY_INSTALL_NAME = $(RUBY_BASE_NAME)
-RUBY_SO_NAME = ruby
+RUBY_SO_NAME = ruby.2.5.1
 RUBYW_INSTALL_NAME = 
 RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
 
-arch = x86_64-linux
+arch = x86_64-darwin17
 sitearch = $(arch)
 ruby_version = 2.5.0
 ruby = $(bindir)/$(RUBY_BASE_NAME)
@@ -111,9 +111,9 @@ ruby_headers = $(hdrdir)/ruby.h $(hdrdir)/ruby/backward.h $(hdrdir)/ruby/ruby.h 
 
 RM = rm -f
 RM_RF = $(RUBY) -run -e rm -- -rf
-RMDIRS = rmdir --ignore-fail-on-non-empty -p
-MAKEDIRS = /bin/mkdir -p
-INSTALL = /usr/bin/install -c
+RMDIRS = rmdir -p
+MAKEDIRS = /usr/local/bin/gmkdir -p
+INSTALL = /usr/local/bin/ginstall -c
 INSTALL_PROG = $(INSTALL) -m 0755
 INSTALL_DATA = $(INSTALL) -m 644
 COPY = cp
@@ -123,7 +123,7 @@ TOUCH = exit >
 
 preload = 
 libpath = . $(libdir)
-LIBPATH =  -L. -L$(libdir) -Wl,-rpath,$(libdir)
+LIBPATH =  -L. -L$(libdir)
 DEFFILE = 
 
 CLEANFILES = mkmf.log
@@ -134,16 +134,16 @@ extout =
 extout_prefix = 
 target_prefix = /msgpack
 LOCAL_LIBS = 
-LIBS =   -lpthread -lgmp -ldl -lcrypt -lm   -lc
+LIBS =   -lpthread -lgmp -ldl -lobjc 
 ORIG_SRCS = buffer.c buffer_class.c extension_value_class.c factory_class.c packer.c packer_class.c packer_ext_registry.c rbinit.c rmem.c unpacker.c unpacker_class.c unpacker_ext_registry.c
 SRCS = $(ORIG_SRCS) 
 OBJS = buffer.o buffer_class.o extension_value_class.o factory_class.o packer.o packer_class.o packer_ext_registry.o rbinit.o rmem.o unpacker.o unpacker_class.o unpacker_ext_registry.o
-HDRS = $(srcdir)/buffer.h $(srcdir)/buffer_class.h $(srcdir)/compat.h $(srcdir)/extension_value_class.h $(srcdir)/factory_class.h $(srcdir)/packer.h $(srcdir)/packer_class.h $(srcdir)/packer_ext_registry.h $(srcdir)/rmem.h $(srcdir)/sysdep.h $(srcdir)/sysdep_endian.h $(srcdir)/sysdep_types.h $(srcdir)/unpacker.h $(srcdir)/unpacker_class.h $(srcdir)/unpacker_ext_registry.h
+HDRS = $(srcdir)/extension_value_class.h $(srcdir)/factory_class.h $(srcdir)/sysdep.h $(srcdir)/unpacker_ext_registry.h $(srcdir)/sysdep_endian.h $(srcdir)/packer.h $(srcdir)/packer_ext_registry.h $(srcdir)/sysdep_types.h $(srcdir)/buffer_class.h $(srcdir)/rmem.h $(srcdir)/buffer.h $(srcdir)/unpacker_class.h $(srcdir)/compat.h $(srcdir)/unpacker.h $(srcdir)/packer_class.h
 LOCAL_HDRS = 
 TARGET = msgpack
 TARGET_NAME = msgpack
 TARGET_ENTRY = Init_$(TARGET_NAME)
-DLLIB = $(TARGET).so
+DLLIB = $(TARGET).bundle
 EXTSTATIC = 
 STATIC_LIB = 
 
@@ -257,6 +257,7 @@ $(TARGET_SO): $(OBJS) Makefile
 	$(ECHO) linking shared-object msgpack/$(DLLIB)
 	-$(Q)$(RM) $(@)
 	$(Q) $(LDSHARED) -o $@ $(OBJS) $(LIBPATH) $(DLDFLAGS) $(LOCAL_LIBS) $(LIBS)
+	$(Q) $(POSTLINK)
 
 
 

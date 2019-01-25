@@ -1,0 +1,15 @@
+current directory: /Users/darlenewelch/rubies/api-mtg-ruby/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.3.2/ext/bootsnap
+/Users/darlenewelch/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20181115-59160-95di0y.rb extconf.rb
+creating Makefile
+
+current directory: /Users/darlenewelch/rubies/api-mtg-ruby/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/darlenewelch/rubies/api-mtg-ruby/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/darlenewelch/rubies/api-mtg-ruby/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.3.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20181115-59160-i0ugys/bootsnap
